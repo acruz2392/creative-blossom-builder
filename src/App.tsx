@@ -3,8 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import AppLayout from "@/components/AppLayout";
+import FeedPage from "@/pages/FeedPage";
+import JobsPage from "@/pages/JobsPage";
+import EventsPage from "@/pages/EventsPage";
+import ForumPage from "@/pages/ForumPage";
+import DirectoryPage from "@/pages/DirectoryPage";
+import AlumniTalksPage from "@/pages/AlumniTalksPage";
+import DiscountsPage from "@/pages/DiscountsPage";
+import ProfilePage from "@/pages/ProfilePage";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +23,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<FeedPage />} />
+            <Route path="/empleo" element={<JobsPage />} />
+            <Route path="/eventos" element={<EventsPage />} />
+            <Route path="/foro" element={<ForumPage />} />
+            <Route path="/directorio" element={<DirectoryPage />} />
+            <Route path="/alumni-talks" element={<AlumniTalksPage />} />
+            <Route path="/descuentos" element={<DiscountsPage />} />
+            <Route path="/perfil" element={<ProfilePage />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
