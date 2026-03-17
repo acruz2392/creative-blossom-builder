@@ -8,9 +8,7 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       colors: {
@@ -47,13 +45,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        hero: {
-          DEFAULT: "hsl(var(--hero-bg))",
-          foreground: "hsl(var(--hero-foreground))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
         },
         teal: {
           DEFAULT: "hsl(var(--teal))",
           light: "hsl(var(--teal-light))",
+          dark: "hsl(var(--teal-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
